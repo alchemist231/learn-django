@@ -17,10 +17,10 @@ class user(models.Model):
 class post(models.Model):
 	## Relates to posts , associated with user
 	user_post=models.ForeignKey(user)
-	post_title=models.CharField(max_length=50)
-	post_text=models.CharField(max_length=400)
-	post_update_time=models.DateTimeField('date updated')		## inside '' denotes explanation to administrator 
+	title=models.CharField(max_length=50)
+	text=models.CharField(max_length=400)
+	update_time=models.DateTimeField('date updated')		## inside '' denotes explanation to administrator 
 	upvote=models.IntegerField(default=0)
 
 	def __str__(self):
-		return self.post_title
+		return self.title
